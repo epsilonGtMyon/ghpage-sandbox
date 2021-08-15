@@ -35,6 +35,7 @@
         日付
         <ul class="menu-list">
           <li><router-link to="/n/seirekiwareki">西暦→和暦</router-link></li>
+          <li><router-link to="/n/warekiseireki">和暦→西暦</router-link></li>
         </ul>
       </p>
     </aside>

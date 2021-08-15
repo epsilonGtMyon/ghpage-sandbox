@@ -1,37 +1,38 @@
-const MEIJI = Object.freeze({
-  order: 1,
-  name: "明治",
-  startJsDate: new Date(1868, 0, 25),
-});
-
-const TAISHO = Object.freeze({
-  order: 2,
-  name: "大正",
-  startJsDate: new Date(1912, 6, 30),
-});
-
-const SHOWA = Object.freeze({
-  order: 3,
-  name: "昭和",
-  startJsDate: new Date(1926, 11, 25),
-});
-
-const HEISEI = Object.freeze({
-  order: 4,
-  name: "平成",
-  startJsDate: new Date(1989, 0, 8),
-});
 
 const REIWA = Object.freeze({
-  reiwa: 5,
+  key: "reiwa",
   name: "令和",
   startJsDate: new Date(2019, 4, 1),
 });
 
+const HEISEI = Object.freeze({
+  key: "heise",
+  name: "平成",
+  startJsDate: new Date(1989, 0, 8),
+});
+
+const SHOWA = Object.freeze({
+  key: "showa",
+  name: "昭和",
+  startJsDate: new Date(1926, 11, 25),
+});
+
+const TAISHO = Object.freeze({
+  key: "taisho",
+  name: "大正",
+  startJsDate: new Date(1912, 6, 30),
+});
+
+const MEIJI = Object.freeze({
+  key: "meiji",
+  name: "明治",
+  startJsDate: new Date(1868, 0, 25),
+});
+
 export {
-  MEIJI,
-  TAISHO,
-  SHOWA,
-  HEISEI,
   REIWA,
+  HEISEI,
+  SHOWA,
+  TAISHO,
+  MEIJI,
 }

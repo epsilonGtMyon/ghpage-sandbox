@@ -5,6 +5,7 @@ import Home from "../views/home/Home.vue";
 import Sandbox01 from "../views/sandbox01/Sandbox01.vue";
 import Sandbox02 from "../views/sandbox02/Sandbox02.vue";
 import SeirekiWareki from "../views/seirekiwareki/SeirekiWareki.vue";
+import WarekiSeireki from "../views/warekiseireki/WarekiSeireki.vue";
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
         path: "seirekiwareki",
         name: "SeirekiWareki",
         component: SeirekiWareki,
+      },
+      {
+        path: "warekiseireki",
+        name: "WarekiSeireki",
+        component: WarekiSeireki,
       },
     ],
   },

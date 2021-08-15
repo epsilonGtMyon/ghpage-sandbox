@@ -1,20 +1,29 @@
 <template>
-  <div class="seirekiWareki px-2">
+  <div class="warekiSeireki px-2">
     <div class="card">
       <header class="card-header is-primary">
-        <p class="card-header-title">西暦を入力</p>
+        <p class="card-header-title">和暦を入力</p>
       </header>
+
       <div class="card-content">
         <div class="columns is-vcentered is-multiline">
           <div class="column is-12">
             <div class="field">
-              <label class="label">西暦</label>
+              <label class="label">和暦</label>
               <div class="is-flex is-align-items-center">
+                <div class="select">
+                  <select v-model="gengo">
+                    <template v-for="g of gengos" :key="g.key">
+                      <option :value="g.key">{{ g.name }}</option>
+                    </template>
+                  </select>
+                </div>
+
                 <input
                   class="input has-text-right"
                   type="number"
                   style="width: 5em"
-                  v-model="year"
+                  v-model="gengoYear"
                 />
                 年
                 <div class="select">
@@ -36,6 +45,7 @@
               </div>
             </div>
           </div>
+
           <div class="column is-12">
             <button class="button is-primary" @click="resolve">決定</button>
           </div>
@@ -47,66 +57,47 @@
       <header class="card-header is-primary">
         <p class="card-header-title">結果</p>
       </header>
-      <div class="card-content">
-        {{ jsDate.toLocaleDateString() }}
-
-        <ul>
-          <template v-for="(text, index) of warekiTexts" :key="index">
-            <li>{{ text }}</li>
-          </template>
-        </ul>
-      </div>
+      <div class="card-content">{{ seirekiText }}</div>
     </div>
   </div>
 </template>
 
 <script>
 import { computed, ref } from "vue";
-import { REIWA, HEISEI, SHOWA, TAISHO, MEIJI } from "./Wareki";
+import { REIWA, HEISEI, SHOWA, TAISHO, MEIJI } from "../seirekiwareki/Wareki";
 
 export default {
-  name: "SeirekiWareki",
+  name: "WarekiSeireki",
   setup() {
     const today = new Date();
-    const year = ref(today.getFullYear().toString());
+
+    const gengos = ref([REIWA, HEISEI, SHOWA, TAISHO, MEIJI]);
+    const gengo = ref(gengos.value[0].key);
+    const gengoYear = ref(
+      (today.getFullYear() - REIWA.startJsDate.getFullYear() + 1).toString()
+    );
     const month = ref(today.getMonth().toString());
     const date = ref(today.getDate().toString());
 
-    const warekiTexts = ref([]);
-
-    const jsDate = computed(() => {
-      const nYear = Number(year.value);
-      const nMonth = Number(month.value);
-      const nDate = Number(date.value);
-      return new Date(nYear, nMonth, nDate);
-    });
+    const seirekiText = ref("");
 
     const resolve = () => {
-      const warekis = [REIWA, HEISEI, SHOWA, TAISHO, MEIJI];
-      warekiTexts.value = [];
-      for (const w of warekis) {
-        if (jsDate.value.getTime() < w.startJsDate.getTime()) {
-          continue;
-        }
+      const g = gengos.value.find((x) => x.key === gengo.value);
 
-        const warekiYear =
-          jsDate.value.getFullYear() - w.startJsDate.getFullYear() + 1;
-
-        warekiTexts.value.push(
-          `${w.name}:${warekiYear}年${
-            jsDate.value.getMonth() + 1
-          }月${jsDate.value.getDate()}日`
-        );
-      }
+      seirekiText.value = `西暦：${
+        g.startJsDate.getFullYear() + Number(gengoYear.value) - 1
+      }年${Number(month.value) + 1}月${date.value}日`;
     };
+
     return {
-      year,
+      gengos,
+      gengo,
+      gengoYear,
       month,
       date,
-      warekiTexts,
 
       resolve,
-      jsDate,
+      seirekiText,
     };
   },
 };
