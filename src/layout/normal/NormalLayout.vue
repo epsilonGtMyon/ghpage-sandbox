@@ -32,7 +32,9 @@
         </ul>
       </p>
     </aside>
-      
+    <template v-if="visibleSideMenu">
+      <div class="is-overlay is-hidden-tablet" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+    </template>
     <router-view />
   </div>
 </template>
