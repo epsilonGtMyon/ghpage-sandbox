@@ -1,4 +1,4 @@
-import "./assets/style.scss"
+import "./assets/style.scss";
 
 import { createApp } from "vue";
 import { router } from "./router";
@@ -6,5 +6,10 @@ import App from "./App.vue";
 
 const app = createApp(App);
 app.use(router);
-
 app.mount("#app");
+
+const ghPagePath = sessionStorage.getItem("ghPagePath");
+if (ghPagePath) {
+  sessionStorage.removeItem("ghPagePath");
+  router.push(ghPagePath.replace("/ghpage-sandbox", ""));
+}

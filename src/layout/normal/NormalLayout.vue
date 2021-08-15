@@ -78,7 +78,6 @@ export default {
     };
 
     const _clickedOutsideMenu = (e) => {
-      console.log("_clickedOutsideMenu");
       const contains = sideMenuRef.value.contains(e.target);
       if (contains) {
         return;
