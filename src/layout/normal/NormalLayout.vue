@@ -5,6 +5,7 @@
         <a
           role="button"
           class="navbar-burger is-always ml-0"
+          :class="{'is-active': visibleSideMenu}"
           @click="showSideMenu"
           
         >
