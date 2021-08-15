@@ -23,7 +23,7 @@
     </nav>
 
     
-    <aside class="appSideMenu menu" v-if="visibleSideMenu" ref="sideMenuRef">
+    <aside class="appSideMenu menu px-2" :class="{'is-shown': visibleSideMenu}" ref="sideMenuRef">
       <p class="menu-label">
         メニュー
         <ul class="menu-list">
@@ -110,9 +110,15 @@ export default {
   bottom: 0;
   z-index: 30;
   background-color: white;
+  transform: translateX(-100%);
+  transition: transform 0.15s linear;
 
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   min-width: 10em;
+
+  &.is-shown {
+    transform: translateX(0);
+  }
 }
 
 .appOverlay {
