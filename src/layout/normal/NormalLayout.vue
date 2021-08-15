@@ -39,7 +39,7 @@
       </p>
     </aside>
     <template v-if="visibleSideMenu">
-      <div class="is-overlay is-hidden-tablet" style="background-color: rgba(0, 0, 0, 0.2)"></div>
+      <div class="appOverlay is-hidden-tablet"></div>
     </template>
     <router-view />
   </div>
@@ -112,5 +112,15 @@ export default {
 
   box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
   min-width: 10em;
+}
+
+.appOverlay {
+  position: fixed;
+  top: 3.25rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 29;
+  background-color: rgba(0, 0, 0, 0.2)
 }
 </style>
