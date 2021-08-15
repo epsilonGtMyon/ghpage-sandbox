@@ -1,7 +1,36 @@
 $primary: hsl(246, 89%, 43%) !default;
-$card-header-background-color: $primary;
-$card-header-color: white;
-@import "../node_modules/bulma/bulma.sass";
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../node_modules/bulma/sass/utilities/functions.sass";
+@import "../node_modules/bulma/sass/utilities/derived-variables.sass";
+@import "../node_modules/bulma/sass/utilities/mixins.sass";
+@import "../node_modules/bulma/sass/utilities/controls.sass";
+@import "../node_modules/bulma/sass/utilities/extends.sass";
+
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+@import "../node_modules/bulma/sass/helpers/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+
+//------------------
+
+.card {
+  @each $name, $pair in $colors {
+    $color: nth($pair, 1);
+    $color-invert: nth($pair, 2);
+    .card-header.is-#{$name} {
+      background-color: $color;
+      
+      .card-header-title {
+        color: $color-invert;
+      }
+    }
+  }
+}
+
+//------------------
 
 html,
 body,
