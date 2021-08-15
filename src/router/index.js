@@ -4,6 +4,7 @@ import NormalLayout from "../layout/normal/NormalLayout.vue";
 import Home from "../views/home/Home.vue";
 import Sandbox01 from "../views/sandbox01/Sandbox01.vue";
 import Sandbox02 from "../views/sandbox02/Sandbox02.vue";
+import SeirekiWareki from "../views/seirekiwareki/SeirekiWareki.vue";
 
 const routes = [
   {
@@ -29,6 +30,12 @@ const routes = [
         path: "sandbox02",
         name: "Sandbox02",
         component: Sandbox02,
+      },
+
+      {
+        path: "seirekiwareki",
+        name: "SeirekiWareki",
+        component: SeirekiWareki,
       },
     ],
   },

@@ -31,6 +31,12 @@
           <li><router-link to="/n/sandbox02">Sandbox02</router-link></li>
         </ul>
       </p>
+      <p class="menu-label">
+        日付
+        <ul class="menu-list">
+          <li><router-link to="/n/seirekiwareki">西暦→和暦</router-link></li>
+        </ul>
+      </p>
     </aside>
     <template v-if="visibleSideMenu">
       <div class="is-overlay is-hidden-tablet" style="background-color: rgba(0, 0, 0, 0.2)"></div>
