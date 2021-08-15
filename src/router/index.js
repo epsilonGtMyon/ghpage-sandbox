@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from "vue-router";
 import NormalLayout from "../layout/normal/NormalLayout.vue";
+import { metaEnv } from "../MetaEnv";
 
 import Home from "../views/home/Home.vue";
 import Sandbox01 from "../views/sandbox01/Sandbox01.vue";
@@ -48,7 +49,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHistory("/ghpage-sandbox"),
+  history: createWebHistory(metaEnv.baseUrl),
   routes,
 });
 
