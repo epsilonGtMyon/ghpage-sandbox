@@ -22,7 +22,7 @@
                 <input
                   class="input has-text-right"
                   type="number"
-                  style="width: 5em"
+                  style="width: 3em"
                   v-model="gengoYear"
                 />
                 年

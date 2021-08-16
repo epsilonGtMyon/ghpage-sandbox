@@ -29,6 +29,7 @@
         <ul class="menu-list">
           <li><router-link to="/n/sandbox01">Sandbox01</router-link></li>
           <li><router-link to="/n/sandbox02">Sandbox02</router-link></li>
+          <li><router-link to="/n/heightsandbox">高さ確認</router-link></li>
         </ul>
       </p>
       <p class="menu-label">
