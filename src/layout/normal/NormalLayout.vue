@@ -27,16 +27,16 @@
       <p class="menu-label">
         メニュー
         <ul class="menu-list">
-          <li><router-link to="/n/sandbox01">Sandbox01</router-link></li>
-          <li><router-link to="/n/sandbox02">Sandbox02</router-link></li>
-          <li><router-link to="/n/heightsandbox">高さ確認</router-link></li>
+          <li><router-link to="/n/sandbox01" active-class="is-active">Sandbox01</router-link></li>
+          <li><router-link to="/n/sandbox02" active-class="is-active">Sandbox02</router-link></li>
+          <li><router-link to="/n/heightsandbox" active-class="is-active">高さ確認</router-link></li>
         </ul>
       </p>
       <p class="menu-label">
         日付
         <ul class="menu-list">
-          <li><router-link to="/n/seirekiwareki">西暦→和暦</router-link></li>
-          <li><router-link to="/n/warekiseireki">和暦→西暦</router-link></li>
+          <li><router-link to="/n/seirekiwareki" active-class="is-active">西暦→和暦</router-link></li>
+          <li><router-link to="/n/warekiseireki" active-class="is-active">和暦→西暦</router-link></li>
         </ul>
       </p>
     </aside>

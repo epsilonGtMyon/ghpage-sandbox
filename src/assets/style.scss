@@ -1,4 +1,5 @@
 $primary: hsl(246, 89%, 43%) !default;
+$menu-item-active-background-color: $primary;
 @import "../node_modules/bulma/sass/utilities/initial-variables.sass";
 @import "../node_modules/bulma/sass/utilities/functions.sass";
 @import "../node_modules/bulma/sass/utilities/derived-variables.sass";
